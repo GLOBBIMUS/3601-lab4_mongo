@@ -45,7 +45,7 @@ public class Server {
         // See specific user
         get("api/users/:id", (req, res) -> {
             res.type("application/json");
-            String id = req.params("id");
+            String id = req.params("id").substring(1);
             return userController.getUser(id);
         });
 
